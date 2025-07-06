@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootsstrappers
+      - system:nodes
+      rolearn:
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - default-trainee
+      userarn:
+      username:
+kind: ConfigMap
+metadata:
+  creationTimeStamp: "2025-07-06T01:43:26Z"
+  name: aws-auth
+  namespace: kube-system
+  uid:
